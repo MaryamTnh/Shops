@@ -4,7 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Shop.Controllers.Service;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<BlogCategoryService>();
+builder.Services.AddScoped<BlogService>();
+builder.Services.AddScoped<CategoryProductService>();
+builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<RoleService>();
+builder.Services.AddScoped<SliderService>();
+builder.Services.AddScoped<UserService>();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ShopContext>(options =>
