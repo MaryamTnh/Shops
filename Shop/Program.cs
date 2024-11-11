@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Shop.Controllers.Service;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddScoped<BlogCategoryService>();
-builder.Services.AddScoped<BlogService>();
-builder.Services.AddScoped<CategoryProductService>();
-builder.Services.AddScoped<ProductService>();
-builder.Services.AddScoped<RoleService>();
-builder.Services.AddScoped<SliderService>();
+builder.Services.AddScoped<IBlogCategoryService, BlogCategoryService>();
+builder.Services.AddScoped<IBlogService, BlogService>();
+builder.Services.AddScoped<ICategoryProductService, CategoryProductService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<ISliderService, SliderService>();
 builder.Services.AddScoped<UserService>();
 
 // Add services to the container.
