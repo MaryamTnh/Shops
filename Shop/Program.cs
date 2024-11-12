@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore;
 using Shop.Controllers.Service;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddScoped<IBlogCategoryService, BlogCategoryService>();
-builder.Services.AddScoped<IBlogService, BlogService>();
-builder.Services.AddScoped<ICategoryProductService, CategoryProductService>();
-builder.Services.AddScoped<IProductService, ProductService>();
-builder.Services.AddScoped<IRoleService, RoleService>();
-builder.Services.AddScoped<ISliderService, SliderService>();
-builder.Services.AddScoped<IUserService, UserService>();
+//builder.Services.AddScoped<IBlogCategoryService, BlogCategoryService>();
+//builder.Services.AddTransient<IBlogService, BlogService>();
+//builder.Services.AddSingleton<ICategoryProductService, CategoryProductService>();
+//builder.Services.AddScoped<IProductService, ProductService>();
+//builder.Services.AddScoped<IRoleService, RoleService>();
+//builder.Services.AddScoped<ISliderService, SliderService>();
+//builder.Services.AddScoped<IUserService, UserService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -38,5 +38,9 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+//app.MapControllerRoute(
+//    name: "Areas",
+//    pattern: "{area=Admin}/{controller=Role}/{action=Index}/{id?}");
 
 app.Run();

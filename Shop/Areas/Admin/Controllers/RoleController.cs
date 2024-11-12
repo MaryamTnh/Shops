@@ -2,10 +2,12 @@
 
 namespace Shop.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class RoleController : Controller
     {
         public IActionResult Index()
         {
+            ViewBag["Message"] = "hiiiiiiiii";
             return View();
         }
         public IActionResult Create()
