@@ -5,9 +5,10 @@ namespace Shop.Areas.Admin.Controllers
     [Area("Admin")]
     public class RoleController : Controller
     {
+        [HttpGet]
         public IActionResult Index()
         {
-            ViewBag["Message"] = "hiiiiiiiii";
+            //ViewBag["Message"] = "hiiiiiiiii";
             return View();
         }
         public IActionResult Create()
