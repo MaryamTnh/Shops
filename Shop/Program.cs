@@ -1,5 +1,6 @@
 using Domain.Interface;
 using Infrastructure.Persistance;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Shop.Controllers.Service;
 
@@ -10,7 +11,7 @@ builder.Services.AddScoped<ICategoryProductService, CategoryProductService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<ISliderService, SliderService>();
-builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
